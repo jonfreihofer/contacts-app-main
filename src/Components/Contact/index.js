@@ -3,6 +3,7 @@ import StyledContact from "./styles.js";
 import StyledButton from "../Button/styles.js";
 import StyledInput from "../SubmitForm/styles.js";
 import PopUp from "../PopUp";
+import ToolTip from "../ToolTip";
 import { Context } from "../Context";
 
 function Contact({
@@ -82,7 +83,7 @@ function Contact({
   const renderData = () => {
     return (
       <>
-        {name} <br />
+        <ToolTip>{name}</ToolTip>
         {email}
       </>
     );
