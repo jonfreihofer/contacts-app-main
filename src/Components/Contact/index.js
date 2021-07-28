@@ -139,9 +139,7 @@ function Contact({
         {edit ? (
           renderInput()
         ) : (
-          <h3 style={{ cursor: "pointer" }} onDoubleClick={changeEditMode}>
-            {renderData()}
-          </h3>
+          <h3 onDoubleClick={changeEditMode}>{renderData()}</h3>
         )}
         <StyledButton
           onClick={() => setShowPopUp(!showPopUp)}

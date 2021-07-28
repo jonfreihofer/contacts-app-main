@@ -26,7 +26,7 @@ export const StyledToolTip = styled.div`
 
     /* Fade in tooltip */
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.7s;
   }
 
   /* Tooltip arrow */
@@ -38,7 +38,7 @@ export const StyledToolTip = styled.div`
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: #555 transparent transparent transparent;
+    border-color: #23d5ab transparent transparent transparent;
   }
 
   /* Show the tooltip text when you mouse over the tooltip container */
