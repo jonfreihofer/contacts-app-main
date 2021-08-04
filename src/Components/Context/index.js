@@ -19,9 +19,7 @@ function ContextProvider({ children }) {
     const getUsers = async () => {
       let users = await fetch("https://jsonplaceholder.typicode.com/users");
       let userData = await users.json();
-      let sortedData = userData.sort((a, b) => {
-        return a.name.localeCompare(b.name);
-      });
+      let sortedData = userData.sort((a, b) => a.name.localeCompare(b.name));
       setContactsData(sortedData);
       setIsLoading(false);
     };
