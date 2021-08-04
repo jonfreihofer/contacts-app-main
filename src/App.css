@@ -53,6 +53,18 @@ body {
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+.firstLetter {
+  width: 20%;
+  height: 45%;
+  text-align: center;
+  font-size: 3em;
+  font-weight: bolder;
+  opacity: 0.5;
+  position: absolute;
+  top: 50px;
+  right: 60px;
+}
+
 .popup {
   display: block;
 }
