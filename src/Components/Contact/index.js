@@ -22,6 +22,7 @@ function Contact({
   const [hovered, setHovered] = useState(false);
   const { inputRef, setContactsData, handleChange, setFavorites } =
     useContext(Context);
+  let firstLetterOfName = name.charAt(0);
 
   const upDateValue = (id, name) => {
     if (inputRef.current.value === name) {
@@ -148,6 +149,7 @@ function Contact({
           Remove
         </StyledButton>
         {displayHeart(id)}
+        <div className="firstLetter">{firstLetterOfName}</div>
       </StyledContact>
     </>
   );
