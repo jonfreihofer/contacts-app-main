@@ -16,13 +16,26 @@ function ContextProvider({ children }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    localStorage.setItem("contactsData", JSON.stringify(contactsData));
+    localStorage.setItem("inputData", JSON.stringify(inputData));
+  }, [contactsData, inputData]);
+
+  useEffect(() => {
     const getUsers = async () => {
-      let users = await fetch("https://jsonplaceholder.typicode.com/users");
-      let userData = await users.json();
-      let sortedData = userData.sort((a, b) => a.name.localeCompare(b.name));
-      setContactsData(sortedData);
-      setIsLoading(false);
+      const localData = localStorage.getItem("contactsList");
+      const dataJSON = JSON.parse(localData);
+      if (localData) return null;
+      try {
+        let users = await fetch("https://jsonplaceholder.typicode.com/users");
+        let userData = await users.json();
+        let sortedData = userData.sort((a, b) => a.name.localeCompare(b.name));
+        setContactsData(localData ? dataJSON : sortedData);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
     };
+
     getUsers();
   }, []);
 
